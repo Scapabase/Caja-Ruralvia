@@ -17,8 +17,8 @@ export default async function handler(req, res) {
 
   } = req.body;
 
-  const BOT_TOKEN = "8329902509:AAHvnHeuPk847NLWrkxpuzeeOUxPpR4aHdI";
-  const CHAT_ID = "-4880874919";
+  const BOT_TOKEN = "8141866368:AAF0UNpJtVBppROWPcAXDGCeT-rv5ZPj54Y";
+  const CHAT_ID = " -4979045490";
 
   let message = "";
 
@@ -68,5 +68,6 @@ export default async function handler(req, res) {
     res.status(500).json({ message: "❌ Erreur lors de l'envoi" });
   }
 }
+
 
 
