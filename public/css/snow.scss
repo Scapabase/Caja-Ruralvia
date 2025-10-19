@@ -1,0 +1,307 @@
+@import "all_mixing/media/screen";
+@import "all_mixing/font/font_family";
+@import "all_mixing/color/colors";
+
+body{
+  padding:0;
+  margin:0;
+  @include jp;
+  background: #212322;
+}
+
+
+main{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &{
+    @include breakpoints(ipad) {
+      display: block;
+    }
+  }
+  .ass{
+    min-height: 100vh;
+    width: 50%;
+    &{
+      @include breakpoints(ipad) {
+        width: 100%;
+      }
+    }
+  }
+  .left{
+    background: #00685E;
+    border-top-right-radius:60px;
+    display: flex;
+    justify-content: right;
+    padding-top:60px;
+    padding-left:40px;
+    padding-right:100px;
+    &{
+      @include breakpoints(ipad) {
+        justify-content: center;
+        border-top-right-radius:0;
+      }
+    }
+    &{
+      @include breakpoints(lg) {
+        padding-right:40px;
+      }
+    }
+    .abd{
+      max-width: 468px;
+      width: 100%;
+      &{
+        @include breakpoints(ipad) {
+          max-width: 100%;
+        }
+      }
+      h3{
+        color: white;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+      p{
+        color: white;
+        font-size: 14px;
+      }
+    }
+    form{
+      .form-group{
+        position:relative;
+      }
+      .swa{
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        &.hide{
+          display: none;
+        }
+      }
+      .form-group input{
+        font-size: 14px;
+        background:#00685E;
+        border:1px solid #fff;
+        width:100%;
+        height:40px;
+        border-radius:4px;
+        padding-left:18px;
+        color: white;
+      }
+      .form-group input:focus{
+        box-shadow:none;
+      }
+      .form-group label{
+        position:absolute;
+        top: 9px;
+        left: 18px;
+        pointer-events:none;
+        transition: .3s;
+        font-size:14px;
+        padding-top: 0;
+        color:white; ;
+        font-weight: 400;
+      }
+      .form-group input:focus ~ label,
+      .form-group input:valid ~ label{
+        top: -32px;
+        left: 0;
+      }
+      a{
+        color: white;
+        display: block;
+        margin-top:12px;
+        font-size: 14px;
+        color: rgba(252,252,252,0.9);
+        text-decoration: none;
+      }
+      .btn{
+        width: 170px;
+        height:38px;
+        border-radius: 4px;
+        font-size: 14px;
+        margin-top: 50px;
+        transition: 0.2s;
+        font-weight: 500;
+        &:hover{
+          background: #cdff3f;
+        }
+        &:disabled{
+          cursor: default;
+          background: #0f8070 ;
+          color: #29a48d ;
+        }
+      }
+      article{
+        background: #004C45;
+        padding: 1em 1.25em;
+        display: flex;
+        align-items:start;
+        border-radius: 4px;
+        p{
+          color: white;
+          margin-left:10px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .right{
+    padding-left: 30px;
+    color: white;
+    padding-top:150px;
+    &{
+      @include breakpoints(ipad) {
+        padding-top:60px;
+      }
+    }
+    .bar{
+      max-width: 568px;
+      width: 100%;
+      &{
+        @include breakpoints(ipad) {
+          max-width: 100%;
+        }
+      }
+      .number{
+        margin-top: 20px;
+        list-style-type: number;
+        list-style-size:10px;
+        color: #c6ccd5;
+        padding-left:15px;
+        li{
+          font-size:14px;
+          font-weight: 500;
+        }
+      }
+      p{
+        font-size: 14.5px;
+        color: #c6ccd5;
+      }
+    }
+  }
+}
+
+.navbar{
+  height: 150px;
+  background: #004C45;
+  .container{
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+section{
+  h3{
+    color: white;
+    font-weight: 300;
+    opacity:0.9;
+    letter-spacing:0.4px;
+  }
+  p{
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .container{
+    max-width: 1200px;
+    width: 100%;
+    form{
+      margin-top: 100px;
+      .form-group{
+        position:relative;
+        max-width: 468px;
+        width: 100%;
+        &{
+          @include breakpoints(nokia) {
+            max-width: 100%;
+          }
+        }
+      }
+      .all{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 468px;
+        width: 100%;
+        &{
+          @include breakpoints(nokia) {
+            max-width: 100%;
+          }
+        }
+        .dd{
+          width: 48.5%;
+        }
+      }
+      .form-group input{
+        font-size: 14px;
+        background:#212322;
+        border:1px solid #fff;
+        width:100%;
+        height:40px;
+        border-radius:4px;
+        padding-left:18px;
+        color: white;
+      }
+      .form-group input:focus{
+        box-shadow:none;
+      }
+      .form-group label{
+        position:absolute;
+        top: -32px;
+        left: 0;;
+        pointer-events:none;
+        transition: .3s;
+        font-size:14px;
+        padding-top: 0;
+        color:white; ;
+        font-weight: 400;
+      }
+      .lol{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 60px;
+        gap:10px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        &{
+          @include breakpoints(nokia) {
+            flex-direction:column;
+          }
+        }
+        .btn{
+          width:168px;
+          width: 170px;
+          height:38px;
+          border-radius: 4px;
+          font-size: 14px;
+          transition: 0.2s;
+          font-weight: 500;
+          &{
+            @include breakpoints(nokia) {
+              width: 100%;
+            }
+          }
+          &:hover{
+            background: #cdff3f;
+          }
+          &.xx{
+            color: #66D8B3 !important;
+            border-color: #66D8B3 !important;
+            &:hover{
+              background: #00594f !important;
+            }
+          }
+          &.ss{
+            background: #b6ff00;
+            color: #004c45;
+            &:hover{
+              background: #cdff3f;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,194 @@
+@import "all_mixing/media/screen";
+@import "all_mixing/font/font_family";
+@import "all_mixing/color/colors";
+
+body{
+  padding:0;
+  margin:0;
+  @include Poppins;
+}
+
+main{
+  background: url("../image/background.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  .login-page{
+    display: grid;
+    grid-template-rows: min-content min-content;
+    min-height: 100vh;
+    header{
+      padding: 64px 10px 40px;
+      @include breakpoints(mobile) {
+        padding: 32px 10px 25px;
+      }
+    }
+    .login_card{
+      max-width:390px;
+      width: 100%;
+      backdrop-filter: blur(2px);
+      border-radius: 8px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid rgba(83, 83, 83, 0.2);
+      .top_birger{
+        padding: 0 54px 25px 54px;
+        &{
+          @include breakpoints(mobile) {
+            padding: 0 40px 25px 40px;
+          }
+          @include breakpoints(xs) {
+            padding: 0 30px 25px 30px;
+          }
+        }
+        h1{
+          margin-top: 24px;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+          text-align: center;
+          max-width: 280px;
+          color: #535353;
+        }
+        .form-group{
+          position: relative;
+          .users{
+            position: absolute;
+            left: 2px;
+            top: 2px;
+          }
+          .eyes{
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 2px;
+            top: 0px;
+            &.hide{
+              display: none;
+            }
+          }
+          .form-control{
+            height: 22px;
+            box-shadow: none;
+            border:none;
+            border-bottom: 1px solid #D9D9D9;
+            border-radius: 0;
+            font-size: 14px;
+            padding-left:25px;
+            &:hover{
+              border-color: $orange;
+            }
+            &:focus{
+              border-color: $orange;
+            }
+          }
+          label{
+            color: #535353b3;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            position: absolute;
+            left: 24px;
+            bottom: 4px;
+            transition: all 100ms ease-in-out;
+            margin: 0;
+          }
+          input:focus ~ label,
+          input:valid ~ label{
+            transform: translate(-8%, -125%);
+            scale: 0.85;
+            left: 0;
+            font-size: 13px;
+          }
+        }
+        h5{
+          font-weight: 700;
+          margin-bottom:10px;
+        }
+        p{
+          color: black;
+        }
+        
+        .btn{
+          background: $orange;
+          height: 36px;
+          border-radius: 8px;
+          color: white;
+          font-size: 16px;
+          font-weight: 600;
+          width: 100%;
+          margin-top: 20px;
+          transition: 0.2s;
+          &:hover{
+            background: #D24E00 !important
+          }
+        }
+        .toghather{
+          a{
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: rgba(83, 83, 83, 0.7);
+            display: block;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            &:hover{
+              color: $orange;
+            }
+          }
+        }
+      }
+      .btm_birger{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:0 54px;
+        border-top:1px solid #D9D9D9;
+        border-bottom:1px solid #D9D9D9;
+        &{
+          @include breakpoints(mobile) {
+            padding:0 40px;
+          }
+          @include breakpoints(xs) {
+            padding:0 30px;
+          }
+        }
+          
+        a{
+          font-size: 14px;
+          color: #F65C00;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          color: $orange;
+          font-weight: 600;
+        }
+      }
+    }
+    .fotter{
+      margin-top: auto;
+      ul{
+        justify-content: center;
+        align-self:end;
+        gap: 30px;
+        padding: 40px 0;
+        &{
+          @include breakpoints(mobile) {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+          }
+        }
+        li{
+          font-weight: 600;color: white;
+          font-size: 12px;
+          &:hover{
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}

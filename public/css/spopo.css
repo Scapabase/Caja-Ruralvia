@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: #212322; }
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  @media (max-width: 867px) {
+    main {
+      display: block; } }
+  main .ass {
+    min-height: 100vh;
+    width: 50%; }
+    @media (max-width: 867px) {
+      main .ass {
+        width: 100%; } }
+  main .left {
+    background: #00685E;
+    border-top-right-radius: 60px;
+    display: flex;
+    justify-content: right;
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 100px; }
+    @media (max-width: 867px) {
+      main .left {
+        justify-content: center;
+        border-top-right-radius: 0; } }
+    @media (max-width: 1100px) {
+      main .left {
+        padding-right: 40px; } }
+    main .left .abd {
+      max-width: 468px;
+      width: 100%; }
+      @media (max-width: 867px) {
+        main .left .abd {
+          max-width: 100%; } }
+      main .left .abd h3 {
+        color: white;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 30px; }
+      main .left .abd p {
+        color: white;
+        font-size: 14px; }
+    main .left form .form-group {
+      position: relative; }
+    main .left form .swa {
+      position: absolute;
+      right: 20px;
+      top: 12px; }
+      main .left form .swa.hide {
+        display: none; }
+    main .left form .form-group input {
+      font-size: 14px;
+      background: #00685E;
+      border: 1px solid #fff;
+      width: 100%;
+      height: 40px;
+      border-radius: 4px;
+      padding-left: 18px;
+      color: white; }
+    main .left form .form-group input:focus {
+      box-shadow: none; }
+    main .left form .form-group label {
+      position: absolute;
+      top: 9px;
+      left: 18px;
+      pointer-events: none;
+      transition: .3s;
+      font-size: 14px;
+      padding-top: 0;
+      color: white;
+      font-weight: 400; }
+    main .left form .form-group input:focus ~ label,
+    main .left form .form-group input:valid ~ label {
+      top: -32px;
+      left: 0; }
+    main .left form a {
+      color: white;
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: rgba(252, 252, 252, 0.9);
+      text-decoration: none; }
+    main .left form .btn {
+      width: 170px;
+      height: 38px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 50px;
+      transition: 0.2s;
+      font-weight: 500; }
+      main .left form .btn:hover {
+        background: #cdff3f; }
+      main .left form .btn:disabled {
+        cursor: default;
+        background: #0f8070;
+        color: #29a48d; }
+    main .left form article {
+      background: #004C45;
+      padding: 1em 1.25em;
+      display: flex;
+      align-items: start;
+      border-radius: 4px; }
+      main .left form article p {
+        color: white;
+        margin-left: 10px;
+        margin-bottom: 0; }
+  main .right {
+    padding-left: 30px;
+    color: white;
+    padding-top: 150px; }
+    @media (max-width: 867px) {
+      main .right {
+        padding-top: 60px; } }
+    main .right .bar {
+      max-width: 568px;
+      width: 100%; }
+      @media (max-width: 867px) {
+        main .right .bar {
+          max-width: 100%; } }
+      main .right .bar .number {
+        margin-top: 20px;
+        list-style-type: number;
+        list-style-size: 10px;
+        color: #c6ccd5;
+        padding-left: 15px; }
+        main .right .bar .number li {
+          font-size: 14px;
+          font-weight: 500; }
+      main .right .bar p {
+        font-size: 14.5px;
+        color: #c6ccd5; }
+
+/*# sourceMappingURL=spopo.css.map */
